@@ -75,3 +75,94 @@ After writing the file, output a brief summary in the conversation (not in the C
 - Honest gaps flagged (JD requirements not met by the master CV)
 
 Keep this summary to 8–15 lines, plain prose.
+
+## Step 7 — Append gaps to gaps.md
+
+Read the file `gaps.md` in the project root, then append a new entry for this application using the exact same format already in the file:
+
+```
+## [Company] — [Full Role Title] ([YYYY-MM-DD])
+**CV file:** [output filename]
+
+| Gap | Severity | Notes |
+|-----|----------|-------|
+| **[gap name]** | [Hard — required / Soft — required / Soft — differentiator] | [one-line explanation] |
+```
+
+- One row per gap identified in Step 6
+- Severity levels: `Hard — required` (explicit JD requirement not met), `Soft — required` (clearly expected but not a knockout), `Soft — differentiator` (listed under "ways to stand out" or nice-to-have)
+- If there are no meaningful gaps, write a single row: `| None identified | — | All JD requirements covered by master CV |`
+- Do not rewrite or reformat existing entries in the file — append only
+
+## Step 8 — Generate the video cover letter script
+
+Create a companion video cover letter script file. The filename shares the exact same suffix as the CV output from Step 4:
+
+**Pattern:** `cl-[company-slug]-[role-slug]-YYYYMMDD.md` (project root)
+
+### 8.1 — Interview the user
+
+Before writing a single word of the script, collect personalization details. Ask questions **one group at a time** and wait for the user's answer before moving to the next group.
+
+**Group A — Proof points:**
+- What is one concrete result or project from your experience most relevant to this role? Include a number or measurable outcome if possible.
+- Is there anything you want to highlight that is NOT in the CV — a side project, personal story, or strong opinion on the domain?
+
+**Group B — Real motivation:**
+- What specifically about this company or role genuinely excites you, beyond what is obvious from the job description?
+- Are you addressing a career transition or gap? If yes, how do you want to frame it?
+
+**Group C — Delivery:**
+- How would you describe your natural communication style? (e.g. direct, warm, technical, storyteller)
+- Any constraint on length? (default: 60–90 seconds)
+
+### 8.2 — Generate the script
+
+Using the job details from Step 1, the tailored CV from Step 5, and the user's answers above, write a video cover letter script following this structure:
+
+- **Hook (0–10 sec):** Specific, non-generic opener — do NOT start with "Hi, my name is"
+- **Relevance (10–40 sec):** 2–3 concrete achievements or skills mapped directly to the role's key requirements; mirror at least one keyword from the job posting
+- **Motivation (40–55 sec):** Why *this* company — use the specific detail the user provided, not a generic statement
+- **Close (55–90 sec):** Assertive and direct — "I want this role" energy, not "I hope to hear from you"
+
+Rules:
+- Spoken length: 60–90 seconds (~150–200 words at natural speaking pace)
+- Use the user's own language and tone from their Group C answer — do not over-polish
+- This is a script the user will read on camera in their own voice — no avatar, no AI voice
+
+### 8.3 — Write the file
+
+Write to `cl-[company-slug]-[role-slug]-YYYYMMDD.md` in the project root using this exact structure:
+
+```
+# Video Cover Letter — [Role] @ [Company]
+
+**CV reference:** [cv filename from Step 4]
+**Target length:** 60–90 seconds (~150–200 words)
+**Tone:** [tone from user Group C answer]
+
+---
+
+## Script
+
+[full script]
+
+---
+
+## Alternate Hooks
+
+1. [hook variant 1]
+2. [hook variant 2]
+3. [hook variant 3]
+
+---
+
+## Teleprompter Cues
+
+- [bullet 1]
+- [bullet 2]
+- [bullet 3]
+- [bullet 4]
+```
+
+Report the output filename in the conversation.
